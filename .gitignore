@@ -1,0 +1,20 @@
+# 虚拟环境：每个人自己电脑上重建，不要上传
+.venv/
+venv/
+
+# Python 运行产生的缓存
+__pycache__/
+*.pyc
+
+# 原始数据比较大，用 scripts/download_data.py 重新下载即可
+data/raw/*.zip
+data/raw/beijing_pm25/
+
+# 清洗后的中间数据可以随时重新生成
+data/processed/
+
+# 编辑器/系统杂项
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

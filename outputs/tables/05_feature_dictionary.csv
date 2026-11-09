@@ -1,0 +1,15 @@
+﻿特征名,构造方法,含义,可能的作用
+year,index.year,年份,捕捉长期变化趋势（本例里只有 5 年）
+month,index.month,月份 1-12,捕捉季节变化
+day,index.day,几号,通常用处不大，容易造成过拟合
+hour,index.hour,小时 0-23,捕捉一天内的早晚高峰
+dayofweek,index.dayofweek,0=周一...6=周日,捕捉工作日/周末差异
+is_weekend,dayofweek >= 5,是否周末 0/1,简单明了地告诉模型周末效应
+dayofyear,index.dayofyear,1-366,季节位置，比 month 精度更高
+weekofyear,index.isocalendar().week,一年中的第几周,周期性任务、报告常用
+hour_sin,sin(2*pi*hour/24),小时在圆上的横坐标,让 23 点和 0 点距离变近
+hour_cos,cos(2*pi*hour/24),小时在圆上的纵坐标,和 hour_sin 配对使用
+dayofweek_sin,sin(2*pi*dayofweek/7),星期在圆上的横坐标,表达“周而复始”
+dayofweek_cos,cos(2*pi*dayofweek/7),星期在圆上的纵坐标,和 dayofweek_sin 配对
+month_sin,sin(2*pi*(month-1)/12),月份在圆上的横坐标,表达季节循环
+month_cos,cos(2*pi*(month-1)/12),月份在圆上的纵坐标,和 month_sin 配对
